@@ -35,7 +35,15 @@ class NimbleScraper:
             "render": render,
             "country": "US"
         }
-        
+        # Add render_flow to ensure the page fully loads (fixes the issue)
+        # if render:
+        #     payload["render_flow"] = [
+        #         {
+        #             "wait": {
+        #                 "delay": wait_time
+        #             }
+        #         }
+        #     ]
         
         try:
             print(f"Fetching: {url[:100]}...")  # Print first 100 chars
